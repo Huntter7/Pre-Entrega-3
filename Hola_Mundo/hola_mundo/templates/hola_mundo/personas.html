@@ -1,0 +1,21 @@
+{% extends 'hola_mundo/base.html'%}
+
+{% block titulo %} Listado de personas {% endblock %}
+
+{% block listado %}
+
+<form action="{% url 'personas-create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = 'submit' value='Agregar'>
+</form>
+
+<ul>
+    {% for persona in personas %}
+        <li>{{persona}}</li>
+      {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Register 
+{% endblock %}

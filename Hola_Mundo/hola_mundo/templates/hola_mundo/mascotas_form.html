@@ -1,0 +1,20 @@
+{% extends 'hola_mundo/base.html'%}
+{% block titulo %} Lista de Mascotas {% endblock %}
+
+{% block listado %}
+<form action="{% url 'mascotas-create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = 'submit' value='Agregar'>
+</form>
+
+<ul>
+    {% for mascota in mascotas %}
+        <li>{{mascota}}</li>
+     {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} 
+Perros 
+{% endblock %}

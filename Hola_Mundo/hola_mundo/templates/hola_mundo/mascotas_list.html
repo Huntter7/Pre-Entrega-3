@@ -1,0 +1,27 @@
+{% extends 'hola_mundo/base.html'%}
+
+{% block titulo %} Tus Mascotas {% endblock %}
+
+{% block listado %}
+
+<form>
+    <p>
+        <label for="criterio_mascota">Mascotas:</label>
+        <input type="text" name="criterio_mascota" maxlength="100" required="criterio_mascota">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for mascota in mascotas %}
+        <li>
+            {{mascota}}           
+        </li>
+     {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Tus Mascotas
+{% endblock %}

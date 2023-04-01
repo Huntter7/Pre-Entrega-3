@@ -1,0 +1,10 @@
+{% extends 'hola_mundo/base.html'%}
+{% block listado %}
+<ul>
+    {% for mascota in mascotas %}
+        <li>
+            {{mascota}}           
+        </li>
+     {% endfor %}
+</ul>
+{% endblock %}

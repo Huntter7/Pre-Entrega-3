@@ -1,0 +1,27 @@
+{% extends 'hola_mundo/base.html'%}
+
+{% block titulo %} Listado de Tareas {% endblock %}
+
+{% block listado %}
+
+<form>
+    <p>
+        <label for="criterio_tarea">Busqueda de Tareas:</label>
+        <input type="text" name="criterio_tarea" maxlength="100" required="" id="criterio_tarea">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for tarea in tareas %}
+        <li>
+            {{tarea}}           
+        </li>
+     {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Looking for
+{% endblock %}

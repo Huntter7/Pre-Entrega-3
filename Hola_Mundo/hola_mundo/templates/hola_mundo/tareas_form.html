@@ -1,0 +1,20 @@
+{% extends 'hola_mundo/base.html'%}
+{% block titulo %} Listado de Tareas {% endblock %}
+
+{% block listado %}
+<form action="{% url 'tareas-create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = 'submit' value='Agregar'>
+</form>
+
+<ul>
+    {% for tarea in tareas %}
+        <li>{{tarea}}</li>
+     {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} 
+Home Work 
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'hola_mundo/base.html'%}
+
+{% block titulo %} Listado de personas {% endblock %}
+
+{% block listado %}
+
+<form>
+    <p>
+        <label for="criterio_nombre">Busqueda de personas:</label>
+        <input type="text" name="criterio_nombre" maxlength="100" required="" id="criterio_nombre">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for persona in personas %}
+        <li>{{persona}}</li>
+      {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Looking for
+{% endblock %}
